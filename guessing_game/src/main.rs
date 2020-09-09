@@ -30,8 +30,10 @@ fn main() {
         // parse를 통한 형 변환
         // trim으로 \n 제거
         // 타입 명시를 통해 정해준다.
-        let guess: u32 = guess.trim().parse()
-            .expect("Please type a number");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         println!("You guessed: {}", guess); // placeholder 사용
 
