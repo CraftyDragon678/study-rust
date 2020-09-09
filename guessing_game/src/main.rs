@@ -26,10 +26,14 @@ fn main() {
     io::stdin().read_line(&mut guess)  // io::Result => Ok 또는 Err
         .expect("Failed to read line");  // Err일 때 실행하는 메소드. 프로그램 작동을 멈추고 인자를 출력
 
+    // parse를 통한 형 변환
+    // trim으로 \n 제거
+    // 타입 명시를 통해 정해준다.
+    let guess: u32 = guess.trim().parse()
+        .expect("Please type a number");
+
     println!("You guessed: {}", guess); // placeholder 사용
 
-    // 작동하지 않는다. 형태가 일치하지 않음
-    // secret_number: u32, guess: String
     match guess.cmp(&secret_number) {
         Ordering::Less => println!("Too small!"),
         Ordering::Greater => println!("Too big!"),
