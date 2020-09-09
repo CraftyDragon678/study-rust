@@ -1,8 +1,16 @@
+extern crate rand; // 외부에 의존하는 크레이트, `cargo doc --open`으로 사용법을 알 수 있다.
+
 // 사용자의 입력을 받고 결과값을 표시하기 위한 라이브러리
 use std::io;
+// 정수 생성기가 구현한 메소드를 정의한 `trait`
+use rand::Rng;
 
 fn main() {
     println!("Guess the number!");
+
+    let secret_number = rand::thread_rng().gen_range(1, 101);
+
+    println!("The secret number is: {}", secret_number);
 
     println!("Please input your guess.");
 
