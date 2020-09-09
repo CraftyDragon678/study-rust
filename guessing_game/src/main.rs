@@ -32,7 +32,7 @@ fn main() {
     // secret_number: u32, guess: String
     match guess.cmp(&secret_number) {
         Ordering::Less => println!("Too small!"),
-        Ordering::Greater => println!("Too small!"),
-        Ordering::Equal => println!("Too small!"),
+        Ordering::Greater => println!("Too big!"),
+        Ordering::Equal => println!("You win!"),
     }
 }
