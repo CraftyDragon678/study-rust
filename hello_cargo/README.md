@@ -6,3 +6,5 @@
 
 `cargo check`: 빌드만!! - 실행 파일 생성 안 함
 
+`cargo build --release`: 배포 패키지 생성
+
