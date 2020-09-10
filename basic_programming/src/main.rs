@@ -57,11 +57,9 @@ fn f2c(f: f64) -> f64 {
 }
 
 fn fibo(n: i32) -> i32 {
-    if n == 1 {
-        return 1;
+    match n {
+        0 => 0,
+        1 => 1,
+        _ => fibo(n - 1) + fibo(n - 2)
     }
-    if n <= 0 {
-        return 0;
-    }
-    return fibo(n - 1) + fibo(n - 2);
 }
